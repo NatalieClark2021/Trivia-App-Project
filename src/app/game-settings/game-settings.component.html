@@ -1,1 +1,73 @@
+<<<<<<< Updated upstream
 <p>game-settings works!</p>
+=======
+
+<div class="container">
+  <form>
+    <div class="form-row">
+      <div class="col-5">
+      <label for="questionAmountInput">Number of Questions:</label>
+      <input type="text" class="form-control" id="questionAmountInput" placeholder="Number of Questions">
+      </div>
+    </div>
+  </form>
+</div>
+
+<!--Allows the selection of question category-->
+  <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <form>
+        <div class="form-row align-items-center">
+          <div class="col-auto my-1">
+            <label class="mr-sm-2" for="questionCategorySelect">Question Category</label>
+            <select class="custom-select mr-sm-2" id="questionCategorySelect">
+              <option selected value="">Choose...</option>
+              <option value="9">General Knowledge</option>
+              <option value="21">Sports</option>
+              <option value="27">Animals</option>
+              <option value="23">History</option>
+              <option value="20">Mythology</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  <!--Allows the selection of question difficulty-->
+   <div class="col-sm">
+      <form>
+        <div class="form-row align-items-center">
+          <div class="col-auto my-1">
+            <label class="mr-sm-2" for="questionDifficultySelect"> Question Difficulty</label>
+            <select class="custom-select mr-sm-2" id="questionDifficultySelect">
+              <option selected value="">Choose...</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  <!--Allows the selection of question types-->
+    <div class="col-sm">
+      <form>
+        <div class="form-row align-items-center">
+          <div class="col-auto my-1">
+            <label class="mr-sm-2" for="questionTypeSelect">Question Type</label>
+            <select class="custom-select mr-sm-2" id="questionTypeSelect">
+              <option selected value="">Choose...</option>
+              <option value="multiple">Multiple Choice</option>
+              <option value="boolean">True / False</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-outline-success">Continue</button>
+>>>>>>> Stashed changes
