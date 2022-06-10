@@ -8,6 +8,7 @@ import { GamePlayComponent } from './game-play/game-play.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NameFormComponent } from './game-settings/name-form/name-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GameCardComponentComponent } from './game-play/game-card-component/game-card-component.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     GameSettingsComponent,
     GamePlayComponent,
-    NameFormComponent
+    NameFormComponent,
+    GameCardComponentComponent
   ],
   imports: [
     BrowserModule,
