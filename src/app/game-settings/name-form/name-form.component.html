@@ -1,18 +1,33 @@
-<div class="col-md-7">
+<div class="col-md-12">
+  <h2>Team Names</h2>
 
-    <h2> Team Names </h2>
+  <form #nameRef="ngForm" (ngSubmit)="onFormSubmit(nameRef)">
+    <div class="form-group">
+      <label for="players"> # of Players</label>
+      <input
+        type="number"
+        id="players"
+        ngModel
+        name="players"
+        class="form-control"
+        [formControl]="playerControl">
+    </div>
+    <div class="row">
+    <div class="form-group repInput">
+      <label for="name"> Team Name: </label>
+      <input
+        ngFor = "let player of players"
+        type="text"
+        id="name"
+        name="name"
+        class="form-control"
+        [formControl]="nameControl"
+      />
+    </div>
 
-    <form #nameRef="ngForm" (ngSubmit)="onFormSubmit(nameRef)">
-      <div class="form-group repInput">
-        <label for="name"> Team Name: </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          class="form-control"
-          [formControl]="nameControl"
-        >
-      </div>
-    </form>
-    <button> Route to GamePlay </button>
+
+  </div>
+
+  </form>
+
 </div>
