@@ -1,20 +1,21 @@
 
+<form>
 <div class="container">
-  <form>
+
     <div class="form-row">
       <div class="col-5">
       <label for="questionAmountInput">Number of Questions:</label>
       <input type="text" class="form-control" id="questionAmountInput" placeholder="Number of Questions">
       </div>
     </div>
-  </form>
+
 </div>
 
 <!--Allows the selection of question category-->
   <div class="container">
   <div class="row">
     <div class="col-sm">
-      <form>
+
         <div class="form-row align-items-center">
           <div class="col-auto my-1">
             <label class="mr-sm-2" for="questionCategorySelect">Question Category</label>
@@ -30,12 +31,12 @@
             </select>
           </div>
         </div>
-      </form>
+
     </div>
 
   <!--Allows the selection of question difficulty-->
    <div class="col-sm">
-      <form>
+
         <div class="form-row align-items-center">
           <div class="col-auto my-1">
             <label class="mr-sm-2" for="questionDifficultySelect"> Question Difficulty</label>
@@ -49,12 +50,12 @@
             </select>
           </div>
         </div>
-      </form>
+
     </div>
 
   <!--Allows the selection of question types-->
     <div class="col-sm">
-      <form>
+
         <div class="form-row align-items-center">
           <div class="col-auto my-1">
             <label class="mr-sm-2" for="questionTypeSelect">Question Type</label>
@@ -67,10 +68,14 @@
             </select>
           </div>
         </div>
-      </form>
+
     </div>
+
   </div>
 </div>
+</form>
 
-<button type="button" class="btn btn-outline-success">Continue</button>
+<app-name-form></app-name-form>
+
+<button [routerLink]="['/gameplay']" type="button" class="btn btn-outline-success">Start Game</button>
 
