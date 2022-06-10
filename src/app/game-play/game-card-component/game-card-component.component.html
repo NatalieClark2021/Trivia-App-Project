@@ -1,10 +1,12 @@
-<div class="card" (click)="onRotateCard()">
+<div class="container-fluid">
+<div class="col-md-10 cardholder" >
+<div class="card " (click)="onRotateCard()">
   <div class="face back">
     <img src="">
   </div>
 
 
-  <div class="face front">
+  <div class="face front" >
     <!--Card image-->
     <div class="view overlay waves-light" mdbWavesEffect>
       <!-- <img class="card-img-top" src="../../shared/images/question.jpg" alt="Card image cap"> -->
@@ -16,7 +18,7 @@
     <!--/.Card image-->
 
     <!--Card content-->
-    <div class="card-body">
+    <div class="card-body" style="height:300px">
       <!--Title-->
       <h4 class="card-title">Question # 1</h4>
       <hr>
@@ -30,4 +32,6 @@
 
 
   </div>
+</div>
+</div>
 </div>

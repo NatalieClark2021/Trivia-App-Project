@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { GameCardComponentComponent } from './game-play/game-card-component/game-card-component.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ScoreBoardComponent } from './game-play/score-board/score-board.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     GameSettingsComponent,
     GamePlayComponent,
     NameFormComponent,
-    GameCardComponentComponent
+    GameCardComponentComponent,
+    ScoreBoardComponent
   ],
   imports: [
     BrowserModule,
