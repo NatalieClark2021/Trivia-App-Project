@@ -1,81 +1,135 @@
 
-<form>
-<div class="container">
+<div class="borderMe container">
+  <br>
 
-    <div class="form-row">
-      <div class="col-5">
-      <label for="questionAmountInput">Number of Questions:</label>
-      <input type="text" class="form-control" id="questionAmountInput" placeholder="Number of Questions">
+  <form [formGroup]="gameSettingsForm" (ngSubmit)="onStartGame()" class="col-12 ">
+    <div class="float-left col-6">
+
+      <div class="form-group">
+        <div class="input-group">
+        <label class="col-form-label col-xs-3" for="questionAmountInput">Number Questions:</label>
+        <input type="text" formControlName="numQuestions" class="form-control input-group col-xs-3" id="questionAmountInput" placeholder="Number of Questions">
+        </div>
       </div>
-    </div>
 
-</div>
-
-<!--Allows the selection of question category-->
-  <div class="container">
-  <div class="row">
-    <div class="col-sm">
-
-        <div class="form-row align-items-center">
-          <div class="col-auto my-1">
-            <label class="mr-sm-2" for="questionCategorySelect">Question Category</label>
-            <select class="custom-select mr-sm-2" id="questionCategorySelect">
-
+        <!--Allows the selection of question category-->
+        <div class="form-group">
+          <div class="input-group">
+            <label class="col-form-label co-xs-3" for="questionCategorySelect">Question Category:</label>
+            <select class="custom-select form-control co-xs-9" id="questionCategorySelect" formControlName="category">
               <option selected value="">Choose...</option>
               <option value="9">General Knowledge</option>
-              <option value="21">Sports</option>
-              <option value="27">Animals</option>
-              <option value="23">History</option>
+              <option value="10">Entertainment: Books</option>
+              <option value="11">Entertainment: Film</option>
+              <option value="12">Entertainment: Music</option>
+              <option value="13">Entertainment: Musicals & Theatres</option>
+              <option value="14">Entertainment: Television</option>
+              <option value="15">Entertainment: Video Games</option>
+              <option value="16">Entertainment: Board Games</option>
+              <option value="17">Science & Nature</option>
+              <option value="18">Science: Computers</option>
+              <option value="19">Science: Mathematics</option>
               <option value="20">Mythology</option>
-
+              <option value="21">Sports</option>
+              <option value="22">Geography</option>
+              <option value="23">History</option>
+              <option value="24">Politics</option>
+              <option value="25">Art</option>
+              <option value="26">Celebrities</option>
+              <option value="27">Animals</option>
+              <option value="28">Vehicles</option>
+              <option value="29">Entertainment: Comics</option>
+              <option value="30">Science: Gadgets</option>
+              <option value="31">Entertainment: Japanese Anime & Manga</option>
+              <option value="32">Entertainment: Cartoon & Animations</option>
             </select>
           </div>
         </div>
 
-    </div>
-
-  <!--Allows the selection of question difficulty-->
-   <div class="col-sm">
-
-        <div class="form-row align-items-center">
-          <div class="col-auto my-1">
-            <label class="mr-sm-2" for="questionDifficultySelect"> Question Difficulty</label>
-            <select class="custom-select mr-sm-2" id="questionDifficultySelect">
-
+        <!--Allows the selection of question difficulty-->
+        <div class="form-group">
+          <div class="input-group">
+            <label class="col-form-label co-xs-3" for="questionDifficultySelect"> Question Difficulty:</label>
+            <select class="custom-select co-xs-3 form-control" formControlName="difficulty" id="questionDifficultySelect">
               <option selected value="">Choose...</option>
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
               <option value="hard">Hard</option>
-
             </select>
           </div>
         </div>
 
-    </div>
-
-  <!--Allows the selection of question types-->
-    <div class="col-sm">
-
-        <div class="form-row align-items-center">
-          <div class="col-auto my-1">
-            <label class="mr-sm-2" for="questionTypeSelect">Question Type</label>
-            <select class="custom-select mr-sm-2" id="questionTypeSelect">
-
+        <!--Allows the selection of question types-->
+        <div class="form-group">
+          <div class="input-group">
+            <label class="col-form-label co-xs-3" for="questionTypeSelect">Question Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <select class="custom-select co-xs-3 form-control" formControlName="questionType" id="questionTypeSelect">
               <option selected value="">Choose...</option>
               <option value="multiple">Multiple Choice</option>
               <option value="boolean">True / False</option>
-
             </select>
           </div>
         </div>
 
-    </div>
+        <br>
+          <div class="row align-to-bottom float-right">
+            <div class="">
+              <button type="submit" [disabled]="!gameSettingsForm.valid || (gameSettingsForm.value.players.length == 0)"
+                class="btn btn-outline-success">Start Game</button>
+            </div>
+          </div>
 
-  </div>
+          <div class="row">
+            <div style= "font-style: italic; color: blue;">
+              <h5 *ngIf="requestingQuestions" class="align-left">Loading Trivia Questions</h5>
+            </div>
+          </div>
+
 </div>
-</form>
 
-<app-name-form></app-name-form>
 
-<button [routerLink]="['/gameplay']" type="button" class="btn btn-outline-success">Start Game</button>
+
+<!-- <hr class="col-5 " align="left"> -->
+
+        <!-- Add Team/Player Names -->
+        <div class="float-right col-6">
+
+          <div class="form-group col-6 align-top">
+            <div class="input-group form-row">
+              <button class="btn btn-success" type="button" (click)="onAddPlayer()">Add Player</button>
+            </div>
+          </div>
+
+          <div class="form-group input-group row ">
+            <div class="" formArrayName="players">
+              <div class="" *ngFor="let playerCtrl of controls; let i = index" [formGroupName]="i"
+                style="margin-top: 5px;">
+                <div class="row ">
+                  <div class="col-10">
+                    <input type="text" class="form-control" formControlName="name" placeholder="Player Name">
+                  </div>
+                  <div class="col-2">
+                    <button type="button" class="btn btn-danger" (click)="onDeletePlayer(i)">X</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <!-- <hr class="col-5 " align="left"> -->
+
+          <!-- <div class="row alignBottomRight">
+            <div class="center-blick aligh-to-bottom">
+            <button type="submit" [disabled]="!gameSettingsForm.valid || (gameSettingsForm.value.players.length == 0)" class="btn btn-outline-success">Start Game</button>
+          </div>
+        </div> -->
+
+  </form>
+
+</div>
+
+<!-- <app-name-form></app-name-form> -->
+
+<!-- <button [routerLink]="['/gameplay']" type="button" class="btn btn-outline-success">Start Game</button> -->
 

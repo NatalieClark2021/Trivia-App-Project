@@ -1,0 +1,14 @@
+
+input {
+  margin-left: 20px;
+}
+
+select {
+  margin-left: 20px;
+}
+
+.borderMe  {
+  min-height: 350px;
+  border: 2px solid lightblue;
+  border-radius: 25px;
+ }
