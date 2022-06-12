@@ -25,7 +25,7 @@ export class TriviaAPIService {
       apiParams = apiParams.append('amount', numQuestions);
     }
     // add a category if one is chosen
-    if (category >= 9 || category <= 32) {
+    if (category >= 9 && category <= 32 ) {
       //valid, so add it
       apiParams = apiParams.append('category', category);
     }
@@ -56,7 +56,8 @@ export class TriviaAPIService {
         if (error.status == 404) {
 
         }
-        return throwError(() => Error('errorRecievingJSON'));
+        console.log('Trivia API error', error);
+        return throwError(() => Error('errorRecievingJSON ' ));
     }));
 
 
