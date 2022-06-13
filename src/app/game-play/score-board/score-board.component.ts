@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ROUTER_CONFIGURATION } from '@angular/router';
+import { TriviaQuestionDataService } from 'src/app/game-settings/trivia-question-data.service';
 import { Player } from 'src/shared/api/player.module';
 
 @Component({
@@ -8,17 +10,22 @@ import { Player } from 'src/shared/api/player.module';
 })
 export class ScoreBoardComponent implements OnInit {
   players: Player[] =[
-    {name:'roger',
-    score:2},
-    {name:'roger2',
-    score:7},
-    {name:'roger3',
-    score:4},
-
+    // {name: 'Roger',
+    // score: 2},
+    // {name: 'Roger2',
+    // score: 2},
+    // {name: 'Roger3',
+    // score: 2}
   ]
-  constructor() { }
+
+  constructor(private triviaQuestionDataService: TriviaQuestionDataService,
+    private router: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.players = this.triviaQuestionDataService.getAllPlayers();
   }
 
+  onChange(name:string, score: number){
+    this.triviaQuestionDataService.updatePlayerScore(name,score);
+  }
 }
