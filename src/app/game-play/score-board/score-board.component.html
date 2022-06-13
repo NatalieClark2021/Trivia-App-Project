@@ -1,17 +1,25 @@
-
-
-<div class="row">
-  <div *ngFor = "let player of players">
-
-
-  <div class="card firstCard" style="width: 100px" >
-  <h4> {{player.name}} </h4>
-  <div class="row  align-items-center count">
-
-    <button> + </button>
-    <p > {{player.score}} </p>
-    <button> - </button>
-
+<div class="row" style="justify-content: center;">
+  <div *ngFor="let player of players">
+    <div class="card firstCard" style="width: 175px">
+      <h4 style="text-align: center">{{ player.name }}</h4>
+      <h5 style="text-align: center">score:</h5>
+      <div class="row align-items-center count">
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="onChange(player.name,-1)"
+        >
+          -
+        </button>
+        <p style="text-align: center; width: 90px">{{ player.score }}</p>
+        <button
+          type="button"
+          class="btn btn-success"
+          (click)="onChange(player.name,1)"
+        >
+          +
+        </button>
+      </div>
+    </div>
   </div>
-</div>
 </div>

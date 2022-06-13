@@ -1,6 +1,6 @@
 .row{
-  padding-top: 30px;
-  padding-left: 30px;
+  padding-top: 10px;
+  /* padding-left: 30px; */
 }
 
 .count {
@@ -9,4 +9,5 @@
 
 .card {
   margin-right: 20px;
+  padding-bottom: 8px;
 }
