@@ -1,37 +1,59 @@
 <div class="container-fluid">
-<div class="col-md-10 cardholder" >
-<div class="card " (click)="onRotateCard()">
-  <div class="face back">
-    <img src="">
-  </div>
+  <div class="col-10 cardholder" >
+    <div class="card tp-box" (click)="onRotateCard()" [@flipState]="flip">
+      <div class="card card-back tp-box__side tp-box__back">
+        <!--Card image-->
+        <div class="view overlay waves-light" mdbWavesEffect>
+          <!-- <img class="card-img-top" src="../../shared/images/question.jpg" alt="Card image cap"> -->
+          <img src="../../../assets/question.jpg" alt="Question Image">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <!--/.Card image-->
+
+        <!--Card content-->
+        <div class="card-body" style="height:300px">
+          <!--Title-->
+          <h4 class="card-title">Question # 1</h4>
+          <hr>
+          <!--Text-->
+          <p class="card-text">This is the Answer</p>
+          <a class="link-text">
+            <h5 class="waves-light" mdbWavesEffect>Read more</h5>
+          </a>
+        </div>
+        <!--/.Card content-->
+      </div>
 
 
-  <div class="face front" >
-    <!--Card image-->
-    <div class="view overlay waves-light" mdbWavesEffect>
-      <!-- <img class="card-img-top" src="../../shared/images/question.jpg" alt="Card image cap"> -->
-      <img src="../../shared/images/question.jpg" alt="Question Image">
-      <a>
-        <div class="mask rgba-white-slight"></div>
-      </a>
+      <div class="card card-front tp-box__side tp-box__front" >
+        <!--Card image-->
+        <div class="view overlay waves-light" mdbWavesEffect>
+          <!-- <img class="card-img-top" src="../../shared/images/question.jpg" alt="Card image cap"> -->
+          <img src="../../../assets/question.jpg" alt="Question Image">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <!--/.Card image-->
+
+        <!--Card content-->
+        <div class="card-body" style="height:300px">
+          <!--Title-->
+          <h4 class="card-title">Question # 1</h4>
+          <hr>
+          <!--Text-->
+          <p class="card-text">Who was the King of Gods in Ancient Greek mythology?</p>
+          <a class="link-text">
+            <h5 class="waves-light" mdbWavesEffect>Read more</h5>
+          </a>
+        </div>
+        <!--/.Card content-->
+
+
+      </div>
+
     </div>
-    <!--/.Card image-->
-
-    <!--Card content-->
-    <div class="card-body" style="height:300px">
-      <!--Title-->
-      <h4 class="card-title">Question # 1</h4>
-      <hr>
-      <!--Text-->
-      <p class="card-text">Who was the King of Gods in Ancient Greek mythology?</p>
-      <a class="link-text">
-        <h5 class="waves-light" mdbWavesEffect>Read more</h5>
-      </a>
-    </div>
-    <!--/.Card content-->
-
-
   </div>
-</div>
-</div>
 </div>

@@ -12,7 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GameCardComponentComponent } from './game-play/game-card-component/game-card-component.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ScoreBoardComponent } from './game-play/score-board/score-board.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,8 @@ import { ScoreBoardComponent } from './game-play/score-board/score-board.compone
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
-
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
