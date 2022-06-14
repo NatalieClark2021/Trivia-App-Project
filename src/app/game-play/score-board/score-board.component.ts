@@ -28,4 +28,6 @@ export class ScoreBoardComponent implements OnInit {
   onChange(name:string, score: number){
     this.triviaQuestionDataService.updatePlayerScore(name,score);
   }
+
+
 }
