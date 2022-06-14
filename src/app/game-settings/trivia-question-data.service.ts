@@ -40,6 +40,15 @@ export class TriviaQuestionDataService {
     this.gamePlayers = [];
   }
 
+  getWinner(){
+
+    let winnerScore = this.gamePlayers.reduce((prev, current) => (+prev.score > +current.score) ? prev : current);
+    let winners = this.gamePlayers.filter(player => player.score == winnerScore.score);
+    console.log(winnerScore);
+    console.log(winners);
+    return winners;
+
+  }
 
   getCurrentTriviaQuestions() {
     // if we have data, return it
