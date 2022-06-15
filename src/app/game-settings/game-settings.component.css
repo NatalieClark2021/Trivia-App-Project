@@ -11,4 +11,5 @@ select {
   min-height: 350px;
   border: 2px solid lightblue;
   border-radius: 25px;
+  margin: 25px;
  }
