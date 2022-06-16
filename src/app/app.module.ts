@@ -13,6 +13,7 @@ import { GameCardComponentComponent } from './game-play/game-card-component/game
 import { AppRoutingModule } from './app-routing.module';
 import { ScoreBoardComponent } from './game-play/score-board/score-board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoadingSpinnerComponent } from './shared/spinner/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GamePlayComponent,
     NameFormComponent,
     GameCardComponentComponent,
-    ScoreBoardComponent
+    ScoreBoardComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
