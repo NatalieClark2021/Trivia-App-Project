@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { APIQuestion } from 'src/shared/api/trivia-questions.model';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { TriviaQuestionDataService } from 'src/app/game-settings/trivia-question-data.service';
+import { Player } from 'src/shared/api/player.module';
 
 @Component({
   selector: 'app-game-card-component',
@@ -25,6 +26,8 @@ export class GameCardComponentComponent implements OnInit {
   flip: string = 'showFront';  //'showFront'
   questions: APIQuestion[] = [];
   currentQuestionIndex: number = 0;
+  gameOver:boolean = false;
+  winners: Player[];
 
   constructor(private triviaQuestionDataService: TriviaQuestionDataService) { }
 
@@ -48,14 +51,24 @@ export class GameCardComponentComponent implements OnInit {
     }, 500);
   }
 
+
+
   onShowWinner() {
     // get list of winners
     // do something spectacular
+    this.winners = this.triviaQuestionDataService.getWinner();
+    this.gameOver = !this.gameOver;
+
   }
 
   onRotateCard() {
     // console.log('flipping');
     this.flip = (this.flip == 'showFront') ? 'showBack' : 'showFront';
   }
+
+  onClose(){
+    this.gameOver = !this.gameOver;
+  }
+
 
 }
