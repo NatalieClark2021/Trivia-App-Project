@@ -3,6 +3,9 @@ html{
   background-color: #FEF9FF;
 }
 
+.letsGet{
+  margin-left:1%;
+}
 #new-game{
   color: #FEF9FF;
   text-decoration: none;
@@ -10,8 +13,10 @@ html{
 }
 
 #brand{
+  justify-content: center;
   font-size: 30px;
-  word-spacing: 1em;
+  font-weight: 800;
+  word-spacing: .5em;
 }
 
 #page-container{
