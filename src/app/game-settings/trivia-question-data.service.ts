@@ -142,7 +142,7 @@ export class TriviaQuestionDataService {
         if (this.apiReturnData.response_code === 0) {
           // 0 =
           this.currentTriviaQuestions = this.apiReturnData.results;
-          console.log('original API questions', this.currentTriviaQuestions);
+          // console.log('original API questions', this.currentTriviaQuestions);
           this.randomizeAnswers(this.currentTriviaQuestions);
           this.newTriviaQuestionsAvailable.next(this.currentTriviaQuestions.slice());
           // return this.currentTriviaQuestions.slice();

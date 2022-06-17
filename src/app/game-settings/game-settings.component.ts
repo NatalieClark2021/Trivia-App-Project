@@ -42,7 +42,7 @@ export class GameSettingsComponent implements OnInit, OnDestroy {
         if (!!this.objTriviaQuestions) {
           // we have questions, proceed to game play
           this.requestingQuestions = false;
-          console.log('objTriviaQuestions:', this.objTriviaQuestions);
+          // console.log('objTriviaQuestions:', this.objTriviaQuestions);
           // navigate to the Game Play route
           // this.router.navigate(['../'], {relativeTo: this.route});
           this.router.navigate(['../gameplay']);
@@ -81,7 +81,7 @@ export class GameSettingsComponent implements OnInit, OnDestroy {
        'name': new FormControl(null, Validators.required)
      })
     );
-    
+
   }
 
   onDeletePlayer(index: number) {
@@ -95,6 +95,6 @@ export class GameSettingsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     //unsubscribe to the Trivia Data Service
     this.triviaQuestionsAvail.unsubscribe();
-    console.log('Destroying the Trivia Data Service Subscription');
+    // console.log('Destroying the Trivia Data Service Subscription');
   }
 }

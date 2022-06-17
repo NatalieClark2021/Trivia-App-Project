@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ScoreBoardComponent } from './game-play/score-board/score-board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingSpinnerComponent } from './shared/spinner/loading-spinner/loading-spinner.component';
+import { NgParticlesModule } from "ng-particles";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LoadingSpinnerComponent } from './shared/spinner/loading-spinner/loadin
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgParticlesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
