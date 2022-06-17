@@ -1,5 +1,11 @@
+
+
 <div *ngIf="gameOver" class="thePopup">
-  <div class="backdrop" ></div>
+  <div class="backdrop" (click)="onClose()">
+    <!-- show the fireworks -->
+    <ng-particles [id]="id" [options]="particlesOptions" [particlesInit]="particlesInit"
+       (particlesLoaded)="particlesLoaded($event)"></ng-particles>
+  </div>
 
   <div class="alert-box ">
 <div class="row">

@@ -3,6 +3,8 @@ import { APIQuestion } from 'src/shared/api/trivia-questions.model';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { TriviaQuestionDataService } from 'src/app/game-settings/trivia-question-data.service';
 import { Player } from 'src/shared/api/player.module';
+import { MoveDirection, ClickMode, HoverMode, OutMode, Container, Engine, Opacity } from "tsparticles-engine";
+import { loadFull } from "tsparticles";
 
 @Component({
   selector: 'app-game-card-component',
@@ -28,6 +30,7 @@ export class GameCardComponentComponent implements OnInit {
   currentQuestionIndex: number = 0;
   gameOver:boolean = false;
   winners: Player[];
+  id = "tsparticles";
 
   constructor(private triviaQuestionDataService: TriviaQuestionDataService) { }
 
@@ -69,6 +72,174 @@ export class GameCardComponentComponent implements OnInit {
   onClose(){
     this.gameOver = !this.gameOver;
   }
+
+
+// THIS SECTION IS FOR THE CONFETTI - BEGIN
+  StartFireworks() {
+
+   }
+
+
+
+  particlesOptions = {
+    detectRetina: true,
+  background: {
+    color: "#000",
+    Opacity: 0.25
+  },
+  fpsLimit: 60,
+  emitters: {
+    direction: "top",
+    autoplay: false,
+    life: {
+      count: 0,
+      duration: 0.1,
+      delay: 0.1
+    },
+    rate: {
+      delay: 0.01,
+      quantity: 1
+    },
+    size: {
+      width: 100,
+      height: 0
+    },
+    position: {
+      y: 100,
+      x: 50
+    }
+  },
+  particles: {
+    number: {
+      value: 0
+    },
+    destroy: {
+      mode: "split",
+      split: {
+        count: 1,
+        factor: { value: 1 / 3 },
+        rate: {
+          value: 100
+        },
+        particles: {
+          color: {
+            value: ["#5bc0eb", "#fde74c", "#9bc53d", "#e55934", "#fa7921"]
+          },
+          stroke: {
+            width: 0
+          },
+          number: {
+            value: 0
+          },
+          collisions: {
+            enable: false
+          },
+          opacity: {
+            value: 1,
+            animation: {
+              enable: true,
+              speed: 0.6,
+              minimumValue: 0.1,
+              sync: false,
+              startValue: "max",
+              destroy: "min"
+            }
+          },
+          shape: {
+            type: "circle"
+          },
+          size: {
+            value: { min: 2, max: 3 },
+            animation: {
+              enable: false
+            }
+          },
+          life: {
+            count: 1,
+            duration: {
+              value: {
+                min: 1,
+                max: 2
+              }
+            }
+          },
+          move: {
+            enable: true,
+            gravity: {
+              enable: false
+            },
+            speed: 2,
+            direction: "none",
+            random: true,
+            straight: false,
+            outMode: "destroy"
+          }
+        }
+      }
+    },
+    life: {
+      count: 1
+    },
+    shape: {
+      type: "line"
+    },
+    size: {
+      value: { min: 1, max: 100 },
+      animation: {
+        enable: true,
+        sync: true,
+        speed: 150,
+        startValue: "random",
+        destroy: "min"
+      }
+    },
+    stroke: {
+      color: {
+        value: "#303030"
+      },
+      width: 1
+    },
+    rotate: {
+      path: true
+    },
+    move: {
+      enable: true,
+      gravity: {
+        acceleration: 15,
+        enable: true,
+        inverse: true,
+        maxSpeed: 100
+      },
+      speed: { min: 10, max: 20 },
+      outModes: {
+        default: "destroy",
+        top: "none"
+      },
+      trail: {
+        fillColor: "#000",
+        enable: true,
+        length: 10
+      }
+    }
+  }
+  };
+
+  particlesLoaded(container: Container): void {
+    // console.log(container);
+    // console.log('Fireworks container loaded');
+  }
+
+  async particlesInit(engine: Engine): Promise<void> {
+    // console.log(engine);
+    // console.log('Fireworks engine started');
+
+    // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(engine);
+    }
+
+// THIS SECTION IS FOR THE CONFETTI - END
 
 
 }
