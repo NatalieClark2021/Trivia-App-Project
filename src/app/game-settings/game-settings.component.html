@@ -95,9 +95,12 @@
         <!-- Add Team/Player Names -->
         <div class="float-right col-6">
 
-          <div class="form-group col-6 align-top">
-            <div class="input-group form-row">
-              <button class="btn btn-success" type="button" (click)="onAddPlayer()">Add Player</button>
+          <div class="form-group align-top">
+            <div class="" style="margin-left: 6px;">
+              <button class="btn btn-success float-left" type="button" [disabled]="gameSettingsForm.value.players.length >= 6"
+                (click)="onAddPlayer()">Add Player</button>
+              <h5 *ngIf="gameSettingsForm.value.players.length >= 6" class="col-6 justify-content: center text-primary"
+                style="margin-left: 100px">Only 6 Players Allowed</h5>
             </div>
           </div>
 
