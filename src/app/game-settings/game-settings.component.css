@@ -7,9 +7,14 @@ select {
   margin-left: 20px;
 }
 
+form {
+  margin-left: 200px;
+}
+
 .borderMe  {
   min-height: 350px;
   border: 2px solid lightblue;
   border-radius: 25px;
-  margin: 25px;
+  margin-top: 25px;
+  margin-left: 125px;
  }
