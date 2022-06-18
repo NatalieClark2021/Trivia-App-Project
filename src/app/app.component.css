@@ -35,3 +35,74 @@ html{
   height: 1rem;
   background-color: #FEF9FF;;
 }
+
+
+/* fading text animation */
+.fade-in-text {
+  opacity: 0;
+  margin: 0px 0px 0px 35px;
+  animation: fadeIn ease-out 2s forwards;
+
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    /* margin: 0px 0px 0px 35px; */
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    /* margin: 18px 0px 0px 35px; */
+    transform: translateY(0);
+  }
+}
+
+/* sliding in from the right like a runaway bus with a bounce */
+.move-left {
+  animation: moveleft 1s 1 normal forwards;
+}
+
+@keyframes moveleft {
+  0% {
+      opacity: 0;
+      transform: translateX(1000px);
+    }
+
+    60% {
+      opacity: 0.8;
+        transform: translateX(-25px);
+    }
+    70% {
+      opacity: 0.85;
+      transform: translateX(20px);
+    }
+    80% {
+      opacity: 0.9;
+      transform: translateX(-15px);
+    }
+    90% {
+      opacity: 0.95;
+      transform: translateX(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+/* media icons rotating 360 degrees */
+/* sliderrevolution.com/resources/css-link-hover-effects/ */
+a .icon {
+  transition: .5s;
+}
+a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+/* NEW GAME effect */
+.menu-link:hover {
+  transform: scale(1.1);
+}
+
