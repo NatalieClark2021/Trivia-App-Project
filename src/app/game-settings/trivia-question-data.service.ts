@@ -51,6 +51,11 @@ export class TriviaQuestionDataService {
 
   }
 
+  clearCurrentTriviaQuestions() {
+    // get rid of the current questions array
+    this.currentTriviaQuestions = null;
+  }
+
   getCurrentTriviaQuestions() {
     // if we have data, return it
     if (!!this.currentTriviaQuestions) {
