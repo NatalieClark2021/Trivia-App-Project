@@ -100,7 +100,7 @@
               <button class="btn btn-success float-left" type="button" [disabled]="gameSettingsForm.value.players.length >= 6"
                 (click)="onAddPlayer()">Add Player</button>
               <h5 *ngIf="gameSettingsForm.value.players.length >= 6" class="col-6 justify-content: center text-primary"
-                style="margin-left: 100px">Only 6 Players Allowed</h5>
+                style="margin-left: 100px">Max 6 Players Allowed</h5>
             </div>
           </div>
 
