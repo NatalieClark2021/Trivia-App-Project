@@ -5,7 +5,7 @@
     "gh-pages": "gh-pages -d dist/trivia-app",
     "deploy": "ng build --prod --base-href=https://natalieclark2021.github.io/Trivia-App-Project/",
     "ng": "ng",
-    "start": "node index,js",
+    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
